@@ -1,0 +1,46 @@
+{
+  "id": "poshan-check",
+  "name": "Poshan Check",
+  "organisation": "BalPoshan Analytics",
+  "color": "#a7550d",
+  "topic": "Child nutrition assessment",
+  "description": "Record measured MUAC and swelling for children aged 6–59 months.",
+  "input": "symptoms",
+  "model": "Whisper tiny multilingual",
+  "modelRole": "Speech-to-text for measured observations; MUAC classification uses WHO thresholds, not a photo estimate.",
+  "source": "https://github.com/openai/whisper",
+  "fields": [
+    [
+      "ageMonths",
+      "Age in completed months",
+      "number",
+      6,
+      59
+    ],
+    [
+      "muac",
+      "Measured MUAC (mm)",
+      "number",
+      70,
+      250
+    ],
+    [
+      "oedema",
+      "Swelling of both feet confirmed by a trained worker",
+      "boolean"
+    ],
+    [
+      "danger",
+      "Unable to feed or another general danger sign",
+      "boolean"
+    ]
+  ],
+  "sample": {
+    "ageMonths": 24,
+    "muac": 112,
+    "oedema": false,
+    "danger": false
+  },
+  "note": "Child aged two years. Measured MUAC is 112 millimetres. No swelling of both feet.",
+  "guidance": "https://www.who.int/tools/elena/interventions/sam-identification"
+}
